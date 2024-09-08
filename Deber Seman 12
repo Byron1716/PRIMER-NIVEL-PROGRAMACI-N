@@ -125,4 +125,4 @@ for ciudad in m:
         for dia in semana:
             suma += dia['temp']
             suma1= round((suma/7),2)
-        print(suma1)
+        print("El promedio de temperatura es ", suma1)
