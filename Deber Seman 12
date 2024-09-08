@@ -1,0 +1,128 @@
+m=[
+    [#Quito
+        [#Semana 1
+            {"day": "Lunes", "temp": 23},
+            {"day": "Martes", "temp": 21},
+            {"day": "Miércoles", "temp": 25},
+            {"day": "Jueves", "temp": 21},
+            {"day": "Viernes", "temp": 23},
+            {"day": "Sábado", "temp": 22},
+            {"day": "Domingo", "temp": 21}
+        ],
+        [#Semana 2
+            {"day": "Lunes", "temp": 21},
+            {"day": "Martes", "temp": 20},
+            {"day": "Miércoles", "temp": 18},
+            {"day": "Jueves", "temp": 23},
+            {"day": "Viernes", "temp": 23},
+            {"day": "Sábado", "temp": 24},
+            {"day": "Domingo", "temp": 22}
+        ],
+        [#Semana 3
+            {"day": "Lunes", "temp": 22},
+            {"day": "Martes", "temp": 20},
+            {"day": "Miércoles", "temp": 23},
+            {"day": "Jueves", "temp": 24},
+            {"day": "Viernes", "temp": 23},
+            {"day": "Sábado", "temp": 22},
+            {"day": "Domingo", "temp": 22}
+        ],
+        [#Semana 4
+            {"day": "Lunes", "temp": 18},
+            {"day": "Martes", "temp": 23},
+            {"day": "Miércoles", "temp": 19},
+            {"day": "Jueves", "temp": 22},
+            {"day": "Viernes", "temp": 22},
+            {"day": "Sábado", "temp": 24},
+            {"day": "Domingo", "temp": 22}
+        ]
+
+    ],
+    [#Guayaquil
+        [#Semana 1
+            {"day": "Lunes", "temp": 25},
+            {"day": "Martes", "temp": 24},
+            {"day": "Miércoles", "temp": 25},
+            {"day": "Jueves", "temp": 23},
+            {"day": "Viernes", "temp": 23},
+            {"day": "Sábado", "temp": 24},
+            {"day": "Domingo", "temp": 22}
+        ],
+        [#Semana 2
+            {"day": "Lunes", "temp": 20},
+            {"day": "Martes", "temp": 24},
+            {"day": "Miércoles", "temp": 23},
+            {"day": "Jueves", "temp": 23},
+            {"day": "Viernes", "temp": 23},
+            {"day": "Sábado", "temp": 24},
+            {"day": "Domingo", "temp": 20}
+        ],
+        [#Semana 3
+            {"day": "Lunes", "temp": 25},
+            {"day": "Martes", "temp": 24},
+            {"day": "Miércoles", "temp": 23},
+            {"day": "Jueves", "temp": 24},
+            {"day": "Viernes", "temp": 24},
+            {"day": "Sábado", "temp": 22},
+            {"day": "Domingo", "temp": 25}
+        ],
+        [#Semana 4
+            {"day": "Lunes", "temp": 20},
+            {"day": "Martes", "temp": 24},
+            {"day": "Miércoles", "temp": 20},
+            {"day": "Jueves", "temp": 21},
+            {"day": "Viernes", "temp": 22},
+            {"day": "Sábado", "temp": 24},
+            {"day": "Domingo", "temp": 24}
+        ]
+
+    ],
+    [#Cuenca
+        [#Semana 1
+            {"day": "Lunes", "temp": 19},
+            {"day": "Martes", "temp": 17},
+            {"day": "Miércoles", "temp": 19},
+            {"day": "Jueves", "temp": 20},
+            {"day": "Viernes", "temp": 21},
+            {"day": "Sábado", "temp": 17},
+            {"day": "Domingo", "temp": 20}
+        ],
+        [#Semana 2
+            {"day": "Lunes", "temp": 20},
+            {"day": "Martes", "temp": 19},
+            {"day": "Miércoles", "temp": 17},
+            {"day": "Jueves", "temp": 19},
+            {"day": "Viernes", "temp": 20},
+            {"day": "Sábado", "temp": 19},
+            {"day": "Domingo", "temp": 20}
+        ],
+        [#Semana 3
+            {"day": "Lunes", "temp": 20},
+            {"day": "Martes", "temp": 19},
+            {"day": "Miércoles", "temp": 17},
+            {"day": "Jueves", "temp": 18},
+            {"day": "Viernes", "temp": 17},
+            {"day": "Sábado", "temp": 19},
+            {"day": "Domingo", "temp": 20}
+        ],
+        [#Semana 4
+            {"day": "Lunes", "temp": 20},
+            {"day": "Martes", "temp": 19},
+            {"day": "Miércoles", "temp": 20},
+            {"day": "Jueves", "temp": 21},
+            {"day": "Viernes", "temp": 22},
+            {"day": "Sábado", "temp": 17},
+            {"day": "Domingo", "temp": 18}
+        ]
+
+    ]
+]
+
+# Promedio de temperaturas
+for ciudad in m:
+    for semana in ciudad:
+        suma = 0
+        for dia in semana:
+            suma += dia['temp']
+            suma1= round((suma/7),2)
+        print(suma1)
