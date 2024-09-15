@@ -1,0 +1,75 @@
+# Temperaturas
+temperatura = [
+    # Quito
+    [
+        [22, 23, 18, 19, 22, 18, 19],  # semana 1
+        [23, 21, 19, 20, 21, 17, 22],  # semana 2
+        [22, 24, 18, 17, 20, 21, 18],  # semana 3
+        [20, 21, 22, 18, 23, 22, 17]  # semana 4
+    ],
+    # Guayaquil
+    [
+        [21, 21, 18, 19, 22, 18, 19],  # semana 1
+        [22, 22, 23, 20, 21, 17, 22],  # semana 2
+        [23, 23, 24, 17, 20, 21, 18],  # semana 3
+        [22, 23, 23, 18, 23, 22, 17]  # semana 4
+    ],
+    # Cuenca
+    [
+        [17, 17, 18, 19, 22, 18, 19],  # semana 1
+        [18, 19, 19, 18, 18, 17, 22],  # semana 2
+        [19, 19, 20, 17, 19, 19, 18],  # semana 3
+        [17, 18, 20, 18, 20, 20, 17]  # semana 4
+    ]
+]
+
+def promedio(temperatura, ciudad, semana):
+    suma_temp_quito = 0
+    for i in range(len(temperatura[ciudad][semana])):
+        suma_temp_quito += temperatura[ciudad][semana][i]
+
+    promedio_temp = round(suma_temp_quito / len(temperatura[ciudad][semana]),2)
+
+    return promedio_temp
+print("")
+print("******Promedio de temperaturas*******")
+print("")
+print("Si desea consultar Quito presione 0")
+print("Si desea consultar Guayaquil presione 1")
+print("Si desea consultar Cuenca presione 2")
+print("")
+c = int(input("¿Qué ciudad deseas consultar la temperatura promedio?: "))
+while c>2 or c<0:
+    print("Lo sentimos tu selección no existe")
+    print("")
+    print("Si desea consultar Quito presione 0")
+    print("Si desea consultar Guayaquil presione 1")
+    print("Si desea consultar Cuenca presione 2")
+    print("")
+    c = int(input("¿Qué ciudad deseas consultar la temperatura promedio?: "))
+    print("")
+
+print("")
+print("******Para las semanas*******")
+print("")
+print("Semana 1 digite 0")
+print("Semana 2 digite 1")
+print("Semana 3 digite 2")
+print("Semana 4 digite 3")
+print("")
+s = int(input("¿De que semana deseas consultar la temperatura promedio?: "))
+while s>3 or s<0:
+    print("Lo sentimos tu selección no existe")
+    print("")
+    print("Semana 1 digite 0")
+    print("Semana 2 digite 1")
+    print("Semana 3 digite 2")
+    print("Semana 4 digite 3")
+    print("")
+    s = int(input("¿De que semana deseas consultar la temperatura promedio?: "))
+    print("")
+
+promedio(temperatura, c, s)
+resul = promedio(temperatura, c, s)
+print("")
+print("La ciudad consultada en la semana solicitada tiene un promedio de", resul, "grados centígrados")
