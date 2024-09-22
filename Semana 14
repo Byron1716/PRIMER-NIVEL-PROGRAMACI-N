@@ -5,7 +5,7 @@ def calcular_descuento(cantidad, precio): #Usamos los parámetros cantidad y pre
     monto_total = (monto_subtotal - descuento) #Obtenemos el valor ya aplicado el descuento
     return monto_total #Pedimos que nos devuelva el monto total
 
-#Damos U¿un pequeño menú de opciones
+#Damos Un pequeño menú de opciones
 print("Tienda de Ropa Rose Store")
 print("Catálogo de prodcutos")
 print("Camisa $15")
