@@ -1,30 +1,77 @@
-# Menú de opciones
+#Definimos nuestra función
+def calcular_descuento(cantidad, precio): #Usamos los parámetros cantidad y precio
+    monto_subtotal = (cantidad * precio) # Multiplicamos los parámetros
+    descuento = (monto_subtotal * 0.2) #Aplicamos descuento
+    monto_total = (monto_subtotal - descuento) #Obtenemos el valor ya aplicado el descuento
+    return monto_total #Pedimos que nos devuelva el monto total
+
+#Damos U¿un pequeño menú de opciones
 print("Tienda de Ropa Rose Store")
 print("Catálogo de prodcutos")
-print("Camisa")
-print("Pantalón")
-print("Falda")
-print("Falda")
+print("Camisa $15")
+print("Pantalón $20")
+print("Falda $25")
+print("Saco $22")
 print("")
 
-# Pedir datos a usuarios
-elemento = input("Ingresa el elemento que deseas adquirir: ")
-precio = int(input("Indica el precio de tu prenda "))
-cantidad = int(input("Indica la cantidad que de prendas que deseas: "))
+#Definimos nuestras únicas opciones
+op = ["camisa", "pantalon", "pantalón", "falda", "saco"]
+
+#Pedimos al usuario que ingrese un producto del catálogo antes mostrado
+elemento = input("¿Qué elemento de neustro catálogo deseas comprar de nuestra lista?: " ).lower()
+
+#Bucle para que el usuario solo pueda ingresar los elementos de nuestro catálogo
+while elemento not in op:
+    print("Lo sentimos tu selección no está disponible, o quizás está mal escrito")
+    elemento = input("¿Qué elemento de neustro catálogo deseas comprar de nuestra lista?: ")
+print("")
+
+#Pedimos al usaurio la cantidad de artículos que desea comprar
+cantidad = int(input(f"¿Cúantos artículos {elemento} deseas comprar?: "))
+print("")
+
+#Definimos nuestra variable precio
+precio = 0
+
+#A precio le asignamos un valor dependiendo del elemento que haya pedido el usuario
+if elemento == "camisa":
+    precio = 15
+    print(f"El precio por cada camisa es ${precio}") #Le mostramos el precio de cada artículo al usario
+if elemento == "pantalon" or elemento == "pantalón":
+    precio = 20
+    print(f"El precio por cada pantalón es ${precio}")#Le mostramos el precio de cada artículo al usario
+if elemento == "falda":
+    precio = 25
+    print(f"El precio por cada falda es ${precio}")#Le mostramos el precio de cada artículo al usario
+if elemento == "saco":
+    precio = 22
+    print(f"El precio por cada saco es ${precio}")#Le mostramos el precio de cada artículo al usario
+
+#Obtenemos el subtotal
 subtotal = precio * cantidad
-print(f"Usted elijió la cantidad de {cantidad} {elemento} con el costo de ${precio}")
 print("")
-# imprimimos los elemntos en una lista
-items_detallados = []
-items_detallados.append(elemento)
-items_detallados.append(precio)
-items_detallados.append(cantidad)
-items_detallados.append(subtotal)
-print(items_detallados)
 print("")
-# Obetenemos total y subtotal
-print(f"El precio subtotal es de ${subtotal}")
-# Obetenemos el valor aplicado el descuentto del 20%
-valor_total = (subtotal - (subtotal * 0.2))
+
+#Llamamos a nuestra función para mostrar el valor sin descuento
+precio_subtotal = calcular_descuento(cantidad, precio)
+print(f"El subtotal de la compra es ${precio_subtotal/0.8}")
 print("")
-print(f"El precio aplicado el descuento es ${valor_total}")
+
+#Llamamos a nuestra función para mostrar el valor ya aplicado el descuento
+precio_final = calcular_descuento(cantidad, precio)
+print(f"El valor total de la compra  aplicado el descuento del 20% es ${precio_final}")
+print("")
+print("")
+print("")
+#Llamamos a nuestra función para mostrar el valor ya aplicado el descuento
+print("La siguiente lista corresponde a prodcuto, cantidad de prodcuto, precio subtotal y precio aplicado el descuento")
+#Creamos una lista vacía
+item = []
+#Ingresamos todos los datos dentro de la lista vacía
+item.append(elemento)
+item.append(cantidad)
+item.append(precio)
+item.append(subtotal)
+item.append(precio_final)
+#Imprimimos la lista con los elementos
+print(item)
