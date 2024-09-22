@@ -1,0 +1,30 @@
+# Menú de opciones
+print("Tienda de Ropa Rose Store")
+print("Catálogo de prodcutos")
+print("Camisa")
+print("Pantalón")
+print("Falda")
+print("Falda")
+print("")
+
+# Pedir datos a usuarios
+elemento = input("Ingresa el elemento que deseas adquirir: ")
+precio = int(input("Indica el precio de tu prenda "))
+cantidad = int(input("Indica la cantidad que de prendas que deseas: "))
+subtotal = precio * cantidad
+print(f"Usted elijió la cantidad de {cantidad} {elemento} con el costo de ${precio}")
+print("")
+# imprimimos los elemntos en una lista
+items_detallados = []
+items_detallados.append(elemento)
+items_detallados.append(precio)
+items_detallados.append(cantidad)
+items_detallados.append(subtotal)
+print(items_detallados)
+print("")
+# Obetenemos total y subtotal
+print(f"El precio subtotal es de ${subtotal}")
+# Obetenemos el valor aplicado el descuentto del 20%
+valor_total = (subtotal - (subtotal * 0.2))
+print("")
+print(f"El precio aplicado el descuento es ${valor_total}")
