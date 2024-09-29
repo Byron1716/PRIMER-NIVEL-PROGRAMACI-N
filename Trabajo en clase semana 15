@@ -1,0 +1,40 @@
+#Creamos la lista "Libros" vacía
+libros = []
+print("")
+#Preguntamos al usario que nos de el nombre del libro
+Nombre = input("¿Cuál es el nombre del libro? ")
+while Nombre.isdigit():
+    print("Lo sentimos en este apartado no se permiten números")
+    Nombre = input("¿Cuál es el nombre del libro? ")
+print("")
+#Preguntamos al usuario la categoría del libro
+Categoria = input(f"¿De qué categoría es el libro {Nombre}? ")
+while Categoria.isdigit():
+    print("Lo sentimos en este apartado no se permiten números")
+    Categoria = input(f"¿De qué categoría es el libro {Nombre}? ")
+print("")
+#Preguntamos al usuario el año del libro
+year = input(f"¿En que año fue publicado el libro {Nombre}? ")
+#Forzamos al usuario a que digite solo números a través de un bucle while
+while not year.isdigit():
+    print("Los sentimos en este apartado solo puede ingresar números")
+    year = input(f"¿En que año fue publicado el libro {Nombre}? ")
+print("")
+#Preguntamos al usuario la cantidad de hojas
+hojas = input(f"¿Cuántas hojas tiene el libro {Nombre}? ")
+#Forzamos al usuario a que digite solo números a través de un bucle while
+while not hojas.isdigit():
+    print("Los sentimos en este apartado solo puede ingresar números")
+    hojas = input(f"¿Cuántas hojas tiene el libro {Nombre}? ")
+print("")
+#Preguntamos al usuario el nombre del autor
+autor = input(f"¿Cuál es el nombre del autor del libro {Nombre}? ")
+#Agregamos cada item a nuestra lista
+libros.append(Nombre)
+libros.append(Categoria)
+libros.append(year)
+libros.append(hojas)
+libros.append(autor)
+print("")
+print("")
+print(libros)
