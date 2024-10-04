@@ -1,0 +1,15 @@
+#Creamos una nueva variable (en este caso será "file")
+file = open('my_note.txt','r')    #Con la opción "open" definimos que acción queremos realizar, para este caso será read "r")
+print(file) #Imprimimos la ruta del archivo quese encuentra como lectura")
+lectura_linea_por_linea = file.readlines() #Establecemos el parámetro de leer linea por linea")
+for l in lectura_linea_por_linea: #Creamos un ciclo for para imprimir las lineas del archivo en txt")
+    print(l.replace('\n', ''))  #Imprimimos los elementos del archivo reemplazando el el salto de línea por espacios simples")
+file.close()  #Cerramos el archivo
+with open('my_note.txt', 'w') as new_file: #Usamos "with para volver a interactuar con el archivo (en este caso para escrbir un nueva línea)"
+    new_file.write('Ruby\n')  #Añadimos la nueva línea con su respectivo salto de línea
+#No hace falta cerrar el archivo, ya que al salir del "with" el archivo se cierra de forma automática
+with open('my_note.txt', 'r') as n_file: #Volvemos a la opción de lectura de archivo
+    l2 = n_file.readline() #deinimos que tipo de lecturaqueremos realizar
+    print('') #Imprimimos un salto de línea para separar lo antiguo de lo nuevo
+    print('La nueva línea quedá así:')  #Imprimimos un texto
+    print(l2.replace('\n', '')) #Imprimimos la nueva línea
